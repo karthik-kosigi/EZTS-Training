@@ -1,0 +1,6 @@
+BiodataKarthik K
+Age: 20
+Height: 5 7'
+weight: 64
+qualification: BE
+occupation: Student
