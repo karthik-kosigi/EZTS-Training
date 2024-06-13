@@ -137,12 +137,21 @@ class Student:
         self.total = sum(marks)
         self.percentage = (self.total/500)*100
         self.grade = "A" if self.percentage >70 else "B"
+        with open("students.txt",'a') as f:
+              f.write(f"{self.name},{self.usn},{self.total},{self.grade},{self.percentage}\n")
+              f.close()
     def display(self):
                 print(f"{self.name}\t{self.usn}\t{self.total}\t{self.grade}\t{self.percentage}")
 s = [0]*2
 for i in range(2):
       s[i]  = Student()
 print("NAME\tUSN\tTOTAL\tGRADE\tPERCENTAGE")
-for i in range(2):
-      s[i].display()
-    
+# for i in range(2):
+#       s[i].display()
+def display_all():
+      with open("students.txt",'r')as f:
+            res = f.readlines()
+            for i in range(len(res)):
+                indi = res[i].split(",") 
+                print(f"{indi[0]}\t{indi[1]}\t{indi[2]}\t{indi[3]}\t{indi[4]}")
+display_all()
