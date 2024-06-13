@@ -121,3 +121,28 @@
 #     j+=1
 #     c2-=1
 # print(a)
+
+
+
+
+class Student:
+    def __init__(self):
+        self.name = input("Enter name: ")
+        self.usn = input("ENter usn: ")
+        self.marks=[]
+        for i in range(5):
+            self.marks.append(int(input(f"Enter marks of subject {i+1}: ")))
+        self.calculate(self.marks)
+    def calculate(self,marks):
+        self.total = sum(marks)
+        self.percentage = (self.total/500)*100
+        self.grade = "A" if self.percentage >70 else "B"
+    def display(self):
+                print(f"{self.name}\t{self.usn}\t{self.total}\t{self.grade}\t{self.percentage}")
+s = [0]*2
+for i in range(2):
+      s[i]  = Student()
+print("NAME\tUSN\tTOTAL\tGRADE\tPERCENTAGE")
+for i in range(2):
+      s[i].display()
+    
