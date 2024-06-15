@@ -1,14 +1,33 @@
-n=5  
+n=6  
 k=2  
-arr = [1,2,3,4,5]
-summ_arr = [(arr[i]*(i+1)) for i in range(len(arr)) ]
-maximum = 0
-for i in range(n-k+1):
-    summation = sum(summ_arr[i:k+i])
-    # for j in range(i,k+i):
-    #     sum +=summ_arr[j]
-    maximum = max(maximum,summation)
+arr = [1,2,3,4,5,6]
+maximum=0
+for j in range(n//2+1):
+    l=arr[j:k+1]
+    summ_arr=[(i+1)*l[i] for i in range(len(l))]
+    summ = sum(summ_arr)
+    maximum = max(maximum,summ)
 print(maximum)
+
+
+
+
+
+# summ_arr = [(arr[i]*(i+1)) for i in range(len(arr)) ]
+# maximum = 0
+# for i in range(n-k+1):
+#     summation = sum(summ_arr[i:k+i])
+#     # for j in range(i,k+i):
+#     #     sum +=summ_arr[j]
+#     maximum = max(maximum,summation)
+# print(maximum)
+
+
+
+
+
+
+
 
 # def max_possible_score(N, K, A):
 #     # Calculate scores array
